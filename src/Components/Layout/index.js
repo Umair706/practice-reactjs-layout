@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../Header";
+import Footer from "../Footer"
 
 /**
  * @author
@@ -20,6 +21,7 @@ const Layout = (props) => {
       <Header />
       {children}      
       {name}
+      <Footer/>
     </div>
   );
 };
