@@ -17,10 +17,11 @@ import Layout from './Components/Layout';
 function App() {
   return (
 
-//For helpful comments look at index.js in HomeComponent and index.js in LayoutComponent
+    //For helpful comments look at index.js in HomeComponent and index.js in LayoutComponent
 
     //This the route table for the ReactJs.
     //You have to define the routes(path,component) and a switch for routes.
+   
     <Router>
       <Switch>
       <Route  exact path="/" component={()=>{return <Layout><Home name="Umair" age={80}/></Layout>}}/>
