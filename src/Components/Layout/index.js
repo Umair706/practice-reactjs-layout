@@ -19,7 +19,7 @@ const Layout = (props) => {
   return (
     <div>
       <Header />
-      <div style={{}}>
+      <div style={{marginTop:5}}>
       {children}      
       
       </div>
