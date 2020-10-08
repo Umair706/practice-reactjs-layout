@@ -20,7 +20,7 @@ const {name,age} = props;
     <div className="HomeContainer">
       {/* You can show the data using {} in the JSX */}
         {name}
-        {age}
+        
     </div>
    )
 
