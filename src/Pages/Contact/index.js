@@ -1,4 +1,5 @@
 import React from 'react'
+import Home from '../Home';
 import "./style.css";
 /**
 * @author
@@ -7,7 +8,11 @@ import "./style.css";
 
 const Contact = (props) => {
   return(
-    <div>Contact</div>
+    <div>Contact
+
+    
+    </div>
+   
    )
 
  }

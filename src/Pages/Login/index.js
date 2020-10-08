@@ -4,6 +4,7 @@ import "./style.css";
 * @author
 * @function Login
 **/
+//This is a functional component
 
 const Login = (props) => {
   return(
