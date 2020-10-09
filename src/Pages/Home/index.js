@@ -66,7 +66,7 @@ const Home = (props) => {
           </Carousel>
         </Col>
       </Row>
-      <Row style={{ marginTop: 20 }}>
+      <Row style={{ margin: "35px 40px" }}>
         <Col className="col-">
           <Card style={{ width: "18rem" }}>
             <Card.Img
@@ -80,7 +80,24 @@ const Home = (props) => {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Button variant="primary">Click Here</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col className="col-">
+          <Card style={{ width: "18rem" }}>
+            <Card.Img
+              variant="top"
+              style={{ height: 180, width: "100%" }}
+              src={require("../../asset/pix.jpg")}
+            />
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              <Button variant="primary">Click Here</Button>
             </Card.Body>
           </Card>
         </Col>
@@ -96,7 +113,7 @@ const Home = (props) => {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Button variant="primary">Click Here</Button>
             </Card.Body>
           </Card></Col>
         <Col > <Card style={{ width: "18rem" }}>
@@ -115,26 +132,7 @@ const Home = (props) => {
             </Card.Body>
           </Card></Col>
       </Row>
-      <Row>
-        <Col>1 of 1</Col>
-        <Col>2 of 2</Col>
-        <Col>3 of 3</Col>
-      </Row>
-      <Row>
-        <Col>1 of 1</Col>
-        <Col>2 of 2</Col>
-        <Col>3 of 3</Col>
-      </Row>
-      <Row>
-        <Col>1 of 1</Col>
-        <Col>2 of 2</Col>
-        <Col>3 of 3</Col>
-      </Row>
-      <Row>
-        <Col>1 of 1</Col>
-        <Col>2 of 2</Col>
-        <Col>3 of 3</Col>
-      </Row>
+     
     </Container>
   );
 };
