@@ -1,9 +1,110 @@
-.HomeContainer{
-    margin: auto auto;
+.HomeContainer {
+  margin: auto auto;
 }
+
+.skills {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+
+}
+
+.column {
+  width: 100%;
+  
+}
+.card{
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.cardBody{
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.19); */
+  height: 550px;
+}
+.inner_skills {
+
+  margin: 10px;
+  background-color: #38B6FF;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 9px;
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.intro {
+  margin-top:20px;
+  display: flex;
+  background-color: white;
+  border: 1px solid lightgray;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inner_skills2 {
+
+  margin: 10px;
+
+  background-color: #FF5757;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 9px;
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.projects {
+
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: auto auto auto auto;
+  margin: 25px 25px;
+  width: 97%
+}
+
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-      width: 100%;
-    }
+  .inner_skills {
+
+    margin: 10px;
+    background-color: #FF5757;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 9px;
+    color: white
   }
+
+  .inner_skills2 {
+
+    margin: 10px;
+    background-color: #FF5757;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 9px;
+    color: white
+  }
+
+  /* For mobile phones: */
+  .column {
+    width: 97%;
+    margin-bottom: 20px;
+    
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+  }
+
+  .projects {
+
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: auto;
+    margin: 35px 40px;
+    width: 97%;
+    
+  }
+}

@@ -1,14 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import "./style.css";
 import {
   Navbar,
   Nav,
-  NavItem,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
 } from "react-bootstrap";
 
 /**
@@ -20,36 +15,35 @@ const Header = (props) => {
   const text = { color: "white", textDecoration: "none" };
   return (
     <div>
-      <Navbar bg="dark" expand="lg">
-        <Navbar.Brand style={{ color: "white" }}>React js Example</Navbar.Brand>
+      <Navbar style={{backgroundColor:"blue",opacity:0.6}} expand="lg">
+        <Navbar.Brand style={{ color: "white",display:"flex",flexDirection:"row" }}>
+        <img
+               
+                style={{ height: 40,width:50 }}
+                src={require("../../asset/logo.png")}
+                alt="Logo"
+              />  
+        
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link>
-              <Link to="/" style={text}>
-                Home
-              </Link>
+          <Nav className="mr-auto" style={{marginTop:-10}} >
+            <Nav.Link style={{color:"white",marginRight:15}} onClick={()=>{props.scrollToIntro()}}>
+              Introduction
             </Nav.Link>
-            <Nav.Link>
-              <Link to="/about" style={text}>
-                About
-              </Link>
+            <Nav.Link  style={{color:"white",marginRight:15}} className="link" onClick={()=>{props.scrollToSkills()}}>
+                Skills
+              </Nav.Link>
+            <Nav.Link  style={{color:"white",marginRight:15}}className="link" onClick={()=>{props.scrollToHobbies()}}>
+                Hobbies
             </Nav.Link>
-            <Nav.Link>
-              <Link to="/contact" style={text}>
+            <Nav.Link  style={{color:"white",marginRight:15}} className="link" onClick={()=>{props.scrollToProjects()}}>
+                Projects
+            </Nav.Link>            
+            <Nav.Link style={{color:"white"}}>
                 Contact
-              </Link>
             </Nav.Link>
-            <Nav.Link>
-              <Link to="/login" style={text}>
-                Login
-              </Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/signup" style={text}>
-                Signup
-              </Link>
-            </Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>
