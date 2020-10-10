@@ -51,10 +51,9 @@ const Home = (props) => {
   }
   
   const [intro, setIntro] = React.useState(
-    "I am a Full Stack Developer with Experience in MERN Stack and React Native. My skill set includes\
-  ReactJs NodeJs, ExpressJs, MongoDB, React Native, HTML, CSS, JSX, Javascript, Redux, Material UI and Shinout.\
-  I love watching Korean Dramas, reading web novels and playing video games/cricket."
-  );
+    "As a computer science major, my passion is to be an innovator and strive to be a \
+    strong developer and analytical thinker. I am confident and poised at interacting with\
+     individuals at all levels. I am committed and focused on any task at hand. ");
 
 
 
