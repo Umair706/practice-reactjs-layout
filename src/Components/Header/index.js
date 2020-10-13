@@ -40,8 +40,8 @@ const Header = (props) => {
             <Nav.Link  style={{color:"white",marginRight:15}} className="link" onClick={()=>{props.scrollToProjects()}}>
                 Projects
             </Nav.Link>            
-            <Nav.Link style={{color:"white"}}>
-                Contact
+            <Nav.Link style={{color:"white"}} className="link" onClick={()=>{props.scrollToEducation()}}>
+                Education
             </Nav.Link>
             
           </Nav>

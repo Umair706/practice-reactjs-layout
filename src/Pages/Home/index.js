@@ -1,7 +1,8 @@
 import React from "react";
 //You can create an individual/seperate .css file for an component and import it on the top
-import "C://Code/practice-reactjs-layout/src/Pages/Home/style.css";
+import "./style.css";
 import { FaGithub } from "react-icons/fa";
+import {GiPaperArrow} from "react-icons/gi";
 import {
   Carousel,
   Container,
@@ -29,7 +30,7 @@ const Home = (props) => {
   const hobbiesRef = React.useRef(null);
   const projectsRef = React.useRef(null);
   const experienceRef = React.useRef(null);
-  const contactRef = React.useRef(null);
+  const educationRef = React.useRef(null);
 
 
   const scrollToIntro=()=>{
@@ -49,6 +50,11 @@ const Home = (props) => {
     projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })  
 
   }
+  const scrollToEducation=()=>{
+    educationRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })  
+
+  }
+  
   
   const [intro, setIntro] = React.useState(
     "As a computer science major, my passion is to be an innovator and strive to be a \
@@ -87,67 +93,49 @@ const Home = (props) => {
     "Reading Newspaper",
   ]);
 
+  const [carouselData,setCaraouselData] = React.useState(
+    [
+      {title:"I am Muhammad Umair",image:require("../../asset/pix3.jpg"),description:"I love playing video games and cricket"},
+      {title:"Hometown",image:require("../../asset/pix2.jpg"),description:"I was born in Garh Moor; a village in Jhang"},
+      {title:"Future Dream",image:require("../../asset/pix.jpg"),description:"I want to be a software architect in the coming future"},
+
+    ]
+    );
+
   return (
     <div> <Header
     scrollToIntro={scrollToIntro}
     scrollToHobbies={scrollToHobbies}
     scrollToProjects={scrollToProjects}
     scrollToSkills={scrollToSkills}
+    scrollToEducation={scrollToEducation}
     
     />
-    <Container fluid style={{marginTop:4,width:"100%"}}>
-     
+    <Container fluid style={{marginTop:4,width:"100%"}}>     
       <Row>
         <Col>
           {/* You can show the data using {} in the JSX */}
           <Carousel>
-            <Carousel.Item>
+            {carouselData.map((item,key)=>{
+           return <Carousel.Item key={key}>
               <img
                 className="d-block w-100"
                 style={{ height: 500 }}
-                src={require("../../asset/pix3.jpg")}
+                src={item.image}
                 alt="First slide"
               />
               <Carousel.Caption>
-                <h3>First slide label</h3>
+                <h3>{item.title}</h3>
                 <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  {item.description}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                style={{ height: 500 }}
-                src={require("../../asset/pix2.jpg")}
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                style={{ height: 500 }}
-                src={require("../../asset/pix.jpg")}
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
+})}
+           </Carousel>
         </Col>
       </Row>
-      <Row ref={introRef}  style={{ margin: 10 }}>
+      <Row ref={introRef}  style={{ margin: "3%" }}>
         <Col>
           <Jumbotron className="intro">
             <div style={{ display: "flex", flexDirection: "row" }}>
@@ -161,9 +149,9 @@ const Home = (props) => {
                 src={require("../../asset/profile.png")}
                 alt="Profile"
               />
-              <h1 style={{ alignSelf: "center", marginLeft: 10 }}>
+              <p className="personal_name">
                 Hi! I am Muhammad Umair
-              </h1>
+              </p>
             </div>
 
             <p>{intro}</p>
@@ -182,7 +170,7 @@ const Home = (props) => {
         </Col>
       </Row>
       <h3 ref={skillsRef} style={{ marginLeft: 27 }}>Skills</h3>
-      <div className="skills" style={{ margin: 25 }}>
+      <div className="skills" style={{ margin: "3%" }}>
         {skills.map((item, key) => {
           return (
             <div className="inner_skills" key={key}>
@@ -192,7 +180,7 @@ const Home = (props) => {
         })}
       </div>
       <h3 ref={hobbiesRef} style={{ marginLeft: 27 }}>Hobbies</h3>
-      <div className="skills" style={{ margin: 25 }}>
+      <div className="skills" style={{ margin: "3%" }}>
         {hobbies.map((item, key) => {
           return (
             <div className="inner_skills2" key={key}>
@@ -207,10 +195,10 @@ const Home = (props) => {
           <Card style={{ width: "100%" }}>
             <Card.Img
               variant="top"
-              style={{ height: 180, width: "100%" }}
+              style={{ height: "25%", width: "100%" }}
               src={require("../../asset/BioAI.png")}
             />
-            <Card.Body className="cardBody">
+            <Card.Body>
               <Card.Title>BioAI</Card.Title>
               <Card.Text>
                 <p>
@@ -235,10 +223,10 @@ const Home = (props) => {
           <Card style={{ width: "100%" }}>
             <Card.Img
               variant="top"
-              style={{ height: 180, width: "100%" }}
+              style={{ height: "25%", width: "100%" }}
               src={require("../../asset/NovelWR.png")}
             />
-            <Card.Body style={{ height: 550 }}>
+            <Card.Body>
               <Card.Title>NovelWR</Card.Title>
               <Card.Text>
                 <p>
@@ -255,7 +243,7 @@ const Home = (props) => {
                 <p>
                   Review novels and vote for novels to win the popularity race
                 </p>
-                <br></br>
+                
               </Card.Text>
               <Button variant="primary">
                 <FaGithub style={{ alignSelf: "center", marginTop: -5 }} />{" "}
@@ -269,24 +257,23 @@ const Home = (props) => {
           <Card style={{ width: "100%" }}>
             <Card.Img
               variant="top"
-              style={{ height: 180, width: "100%" }}
+              style={{ height: "25", width: "100%" }}
               src={require("../../asset/ChatApp.png")}
             />
-            <Card.Body style={{ height: 550 }}>
+            <Card.Body>
               <Card.Title>ChatApp</Card.Title>
               <Card.Text>
                 <p>
                   Live group chat app for communication with following features:
                 </p>
-                <p>Create User Account</p>
-                <p>Sign in to the system</p>
+                <p>User Profiling</p>                
                 <p>Create new group</p>
                 <p>Search groups to join</p>
                 <p>Join any group</p>
                 <p>Chat with other members of the group</p>
                 <p>Broadcast a message to all users</p>
-                <p> `</p>
-                {/* <br></br> */}
+           
+         
               </Card.Text>
               <Button variant="primary" style={{ marginTop: -10 }}>
                 <FaGithub style={{ alignSelf: "center", marginTop: -5 }} />{" "}
@@ -300,10 +287,10 @@ const Home = (props) => {
           <Card style={{ width: "100%" }}>
             <Card.Img
               variant="top"
-              style={{ height: 180, width: "100%" }}
+              style={{ height: "25%", width: "100%" }}
               src={require("../../asset/Tuitify.png")}
             />
-            <Card.Body style={{ height: 550 }}>
+            <Card.Body>
               <Card.Title>Tuitify</Card.Title>
               <Card.Text>
                 <p>
@@ -311,13 +298,12 @@ const Home = (props) => {
                   following features
                 </p>
                 <p>User Profiling</p>
-                <p>Follow people</p>
-                <p>Chat with other people</p>
+                <p>Follow and chat with other people</p>
                 <p>Watch videos content</p>
                 <p>View different courses and their details</p>
                 <p>Post videos online</p>
                 <p>View other user's profile</p>
-                <br></br>
+         
               </Card.Text>
               <Button variant="primary" style={{ marginTop: -10 }}>
                 <FaGithub style={{ alignSelf: "center", marginTop: -5 }} />{" "}
@@ -327,6 +313,24 @@ const Home = (props) => {
           </Card>
         </Col>
       </div>
+      <h3 style={{ marginLeft: 27 }}>Education</h3>
+      <Jumbotron ref={educationRef}   className="intro" style={{margin:"3%"}}>
+        <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+        <h5><GiPaperArrow size={16} style={{marginTop:-10,marginRight:10}}/>Bachelors in Computer Science</h5>
+       
+        <p>3.54/4.00</p>
+        </div>
+        <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+        <h5><GiPaperArrow size={16} style={{marginTop:-10,marginRight:10}}/>Intermediate</h5>
+        <p>825/1100</p>
+       
+        </div>
+        <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+        <h5><GiPaperArrow size={16} style={{marginTop:-10,marginRight:10}}/>Matriculation</h5>
+     
+        <p>934/1100</p>
+        </div>
+      </Jumbotron>
     </Container>
     </div>
   );
